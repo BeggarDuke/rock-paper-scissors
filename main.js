@@ -36,20 +36,20 @@ function game(playerChoice, computerChoice) {
     else if (playerChoice === "rock") {
         console.log(playerChoice, computerChoice);
         computerChoice === "scissors" ? 
-            alert("You are won! Rock beats scissors!") :
-            alert("You are loose! Paper beats rock!");
+            alert("You won! Rock beats scissors!") :
+            alert("You lose! Paper beats rock!");
     }
     else if (playerChoice === "paper") {
         console.log(playerChoice, computerChoice);
         computerChoice === "rock" ? 
-            alert("You are won! Paper beats rock!") :
-            alert("You are loose! Scissors beats paper!");
+            alert("You won! Paper beats rock!") :
+            alert("You lose! Scissors beats paper!");
     }
     else {
         console.log(playerChoice, computerChoice);
         computerChoice === "paper" ? 
-            alert("You are won! Scissors beats paper!") :
-            alert("You are loose! Rock beats paper!");
+            alert("You won! Scissors beats paper!") :
+            alert("You lose! Rock beats paper!");
     }
 }
 
