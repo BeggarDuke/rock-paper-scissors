@@ -23,34 +23,50 @@ function playerSelection() {
         }
     }
 }
-
-// playerChoice = playerSelection();
-// computerChoice = computerSelection();
+let playerChoice = playerSelection();
+let computerChoice = computerSelection();
+let playerWin = 0;
+let computerWin = 0;
 
 function game(playerChoice, computerChoice) {
 
     if (playerChoice === computerChoice) {
-        console.log(playerChoice, computerChoice);
         alert("Draw!");
     }
-    else if (playerChoice === "rock") {
-        console.log(playerChoice, computerChoice);
-        computerChoice === "scissors" ? 
-            alert("You won! Rock beats scissors!") :
-            alert("You lose! Paper beats rock!");
-    }
-    else if (playerChoice === "paper") {
-        console.log(playerChoice, computerChoice);
-        computerChoice === "rock" ? 
-            alert("You won! Paper beats rock!") :
-            alert("You lose! Scissors beats paper!");
-    }
+
     else {
-        console.log(playerChoice, computerChoice);
-        computerChoice === "paper" ? 
-            alert("You won! Scissors beats paper!") :
-            alert("You lose! Rock beats paper!");
+        switch (playerChoice + " " + computerChoice) {
+            case "rock scissors":
+                playerWin++;
+                alert("You won! Rock beats scissors!");
+                break;
+            
+            case "rock paper":
+                computerWin++
+                alert("You lose! Paper beats rock!");
+                break;
+
+            case "paper rock":
+                playerWin++;
+                alert("You won! Paper beats rock!");
+                break;
+            
+            case "paper scissors":
+                computerWin++;
+                alert("You lose! Scissors beats paper!");
+                break;  
+
+            case "scissors paper":
+                playerWin++;
+                alert("You won! Scissors beats paper!");
+                break;
+            
+            case "scissors rock":
+                computerWin++;
+                alert("You lose! Rock beats scissors!");
+                break;
+        }
     }
 }
-
-game(playerSelection(), computerSelection());
+    
+game(playerChoice, computerChoice);
