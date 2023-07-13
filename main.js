@@ -11,22 +11,14 @@ function computerSelection() {
 }
 
 function playerSelection() { 
-   for (let i = 0; i = 1;) {
-        let choice = prompt("Please, enter \"rock\", \"paper\" or \"scissors\".");
-        if (choice === null) {
-        i = 0;
-        }
-        else { 
-            choice = choice.toLowerCase();
-            if (choice === "rock" || choice === "paper" || choice === "scissors") {
-                return choice 
-            } 
-            else {
-                alert("incorrect value");
-                i = 0;
-            }
-        }
+    let choice;
+    do {
+        choice = prompt("Please, enter \"rock\", \"paper\" or \"scissors\".");
+        choice = choice.toLowerCase();
+
     }
+    while (choice === null || (choice !== "rock" && choice !== "paper" && choice !== "scissors"));
+    return choice;
 }
 
 function game() {
@@ -103,7 +95,18 @@ function game5 () {
     }
 }
 
-let gameMode = prompt("Type \"1\" to play just 1 game, type \"5\" to play 5 games in a row");
-gameMode === "5" ? game5() :
-gameMode === "1" ? game() :
-alert("You need to choose gamemode");
+function gameStart() {
+    let gameMode;
+    do {
+        gameMode = prompt("Type \"1\" to play just 1 game, type \"5\" to play 5 games in a row");
+        gameMode === "5" ? game5() :
+        gameMode === "1" ? game() :
+        gameMode === null ? alert("Reload page if you will want to play again") :
+        alert("You need to choose game mode");
+    }
+    while (gameMode !== null);
+
+
+
+}
+gameStart();
